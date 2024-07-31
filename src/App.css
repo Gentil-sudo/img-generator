@@ -1,0 +1,95 @@
+.App {
+  
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+input, textarea {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 300px;
+}
+
+textarea {
+  height: 100px;
+}
+
+button {
+  background-color: #61dafb;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #4fa3b0;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  background: #fff;
+  color: #000;
+  max-width: 400px;
+  margin: auto;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.price{
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+  width: 180px;
+  border-radius: 10px;
+  background-color: #6c6e6e;
+  flex-direction: column;
+}
+
+img {
+  margin-top: 20px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+}
+
+footer {
+  height: 50px;
+  font-size: 28px;
+}
+
+
