@@ -61,7 +61,7 @@ function App() {
           />
           <input
             type="text"
-            placeholder="Preço"
+            placeholder="Preço ou Contato"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
           />
@@ -91,7 +91,7 @@ function App() {
             <p className="price">
               <strong className="price-strong">Faça já <br /> seu pedido</strong>
               <span className="price-value">
-                Confira em:
+                Saiba mais:
                 <p className="price-price">{price}</p>
               </span>
             </p>
