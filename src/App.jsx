@@ -1,14 +1,14 @@
-// src/App.js
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import html2canvas from 'html2canvas';
-import './App.css';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import html2canvas from "html2canvas";
+import "./App.css";
 
 function App() {
-  const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
-  const [price, setPrice] = useState('');
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState("");
   const [uploadedImage, setUploadedImage] = useState(null);
+  const [uploadLogo, setUploadLogo] = useState(null); // Novo estado para a imagem do exemplo
 
   const navigate = useNavigate();
 
@@ -23,10 +23,23 @@ function App() {
     }
   };
 
+  const handleExampleImageChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setUploadLogo(reader.result); // Atualiza o estado com a imagem importada
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const handleGenerateImage = () => {
-    html2canvas(document.querySelector("#product-card")).then(canvas => {
+    html2canvas(document.querySelector("#product-card")).then((canvas) => {
       const img = canvas.toDataURL("image/png");
-      navigate('/imagemres', { state: { image: img, name, description, price } });
+      navigate("/imagemres", {
+        state: { image: img, name, description, price },
+      });
     });
   };
 
@@ -47,28 +60,49 @@ function App() {
             onChange={(e) => setDescription(e.target.value)}
           />
           <input
-            type="text"
+            type="number"
             placeholder="Preço"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
           />
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handleFileChange}
-          />
+          <input type="file" accept="image/*" onChange={handleFileChange} />
+          <input type="file" accept="image/*" onChange={handleExampleImageChange} />
           <button onClick={handleGenerateImage}>Gerar Imagem</button>
         </div>
-        <div id="product-card" className="product-card">
-          {uploadedImage && <img src={uploadedImage} alt="Produto" className="product-image" />}
-          <div className='product-content'>
-          <h2>{name}</h2>
-          <p><strong>Descrição:</strong> <br />{description}</p>
-          <p ><strong className="price">Preço:</strong> <br />{price}</p>
+      </header>
+      <div id="product-card" className="product-box">
+        <div className="product-image">
+          {uploadedImage && (
+            <img src={uploadedImage} alt="Produto" className="product-image-content" />
+          )}
+        </div>
+        <div className="product-container">
+          <div className="product-content">
+            <h2 className="title">
+              <strong className="promotion">Promoção! </strong>
+              <br />
+              <p className="product-name">{name}</p>
+            </h2>
+            <p className="description">
+              <strong></strong>
+              <br />
+              {description}
+            </p>
+            <p className="price">
+              <strong className="price-strong">Faça já <br /> seu pedido</strong>
+              <span className="price-value">
+                Por apenas:
+                <p className="price-price">R$ {price}</p>
+              </span>
+            </p>
+            {/* Adiciona a imagem importada abaixo do preço */}
+            {uploadLogo && (
+              <img src={uploadLogo} alt="Imagem Exemplo" className="example-image" />
+            )}
           </div>
         </div>
-      <footer >@Enzo Gentil</footer>
-      </header>
+      </div>
+      <footer>@Enzo Gentil</footer>
     </div>
   );
 }

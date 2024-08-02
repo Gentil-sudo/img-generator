@@ -10,11 +10,11 @@ function ImageResultPage() {
     <div className="ImageResultPage">
       <header className="App-header">
         <h1>Resultado da Imagem</h1>
-        <div className="product-card">
+        <div className="product-box">
           {image && <img src={image} alt="Imagem Gerada" />}
           <h2>{name}</h2>
           <p>{description}</p>
-          <p><strong>Preço:</strong> {price}</p>
+          
         </div>
         <footer >@Enzo Gentil</footer>
       </header>
