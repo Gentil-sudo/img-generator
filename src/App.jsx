@@ -60,7 +60,7 @@ function App() {
             onChange={(e) => setDescription(e.target.value)}
           />
           <input
-            type="number"
+            type="text"
             placeholder="Preço"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
@@ -91,8 +91,8 @@ function App() {
             <p className="price">
               <strong className="price-strong">Faça já <br /> seu pedido</strong>
               <span className="price-value">
-                Por apenas:
-                <p className="price-price">R$ {price}</p>
+                Confira em:
+                <p className="price-price">{price}</p>
               </span>
             </p>
             {/* Adiciona a imagem importada abaixo do preço */}
