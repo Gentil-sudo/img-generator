@@ -1,4 +1,6 @@
 .App {
+  display: flex;
+  flex-direction: row;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -13,11 +15,15 @@
   color: white;
 }
 
+.App-content {
+  display: flex;
+  min-width: 100vw;
+}
+
 .App-header {
   text-align: center;
   background-color: #282c34;
-  
-  min-width: 100vw;
+  min-width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,20 +34,27 @@
 .form-container {
   display: flex;
   flex-direction: column;
+  font-size: 30px;
+  max-width: 800px;
   margin-bottom: 20px;
   
 }
 
+
+
 input, textarea {
   margin: 10px;
-  padding: 10px;
+  padding: 12px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  width: 300px;
+  font-size: 18px;
+  width: 600px;
+  height: 50px;
 }
 
 textarea {
   height: 100px;
+  
 }
 
 button {
@@ -68,7 +81,7 @@ button:hover {
   border-radius: 5px;
   background: #fff;
   color: #000;
-  height: auto;
+  height: 1080px;
   max-width: 600px;
   margin: auto;
 }
@@ -76,6 +89,7 @@ button:hover {
 .product-container {
   height: auto;
   width: auto;
+  height: 1080px;
 
 }
 
@@ -86,27 +100,34 @@ button:hover {
   justify-content: center;
   align-items: center;
   width: 600px;
+  height: 1080px;
+ 
   
 }
 
 .title {
-  max-width: 80%;
+  max-width: 85%;
   height: auto;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-weight: bolder;
-  font-size: 28px;
+  font-weight: bold;
+  font-size: 35px;
+  text-shadow: 1px 1px black ;
   overflow-wrap: break-word; /* Propriedade mais moderna e recomendada */
+  margin-bottom: -3px;
   
 }
 
 
 .product-image-content {
-  width: 550px;
+  width: 570px;
   height: auto; /* Ajuste conforme necessário */
-  max-width: 600px; /* Limita a largura máxima da imagem */
+  max-width: 570px; /* Limita a largura máxima da imagem */
   max-height: 350px; 
-  border: 5px aqua solid;
+  border: 6px aqua solid;
   border-radius: 12px;
+  margin-top: 15px;
+  margin-bottom: -25px;
+  
 }
 
 .product-name {
@@ -114,14 +135,14 @@ button:hover {
 }
 
 .promotion {
-  font-size: 15px;
+  font-size: 25px;
   font-weight: 800;
   color: rgb(2, 111, 101);
 }
 
 .description{
-  font-size: 25px;
-  font-weight: 900;
+  font-size: 20px;
+  font-weight: bold;
   border-top: 3px  gray solid;
   border-bottom: 3px  gray solid;
   margin-top: -30px;
@@ -130,13 +151,12 @@ button:hover {
   height: auto;
   overflow-wrap: break-word; /* Propriedade mais moderna e recomendada */
   color: rgb(82, 84, 84);
+  box-shadow: inset 0px 0px 18px rgba(187, 187, 187, 0.462);
 }
 
 .h6 {
   color: rgb(11, 98, 98);
 }
-
-
 
 
 .price {
@@ -146,9 +166,10 @@ button:hover {
   align-items: center;
   background-color: rgb(7, 137, 137);
   border-radius: 10px;
-  height: 120px;
+  height: 130px;
   width: 90%;
-  margin-bottom: -5px;
+  padding: 10px;
+  margin-bottom: -15px;
 }
 
 .price-strong{
@@ -177,25 +198,27 @@ button:hover {
 }
 
 .price-price {
- 
+  
   font-size: 29px;
   margin-top: -5px;
   color: white;
 }
 
 
-img {
-  margin-top: 20px;
-  border: 1px solid #ffffff;
-  border-radius: 5px;
-}
+
 
 footer {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  min-width: 100vw;
   height: 50px;
   font-size: 28px;
+  
 }
 
-.example-image {
+.logo-image {
+  background-color: transparent;
   margin-top: 20px;
   width: 400px;
   height: 180px; /* Ajuste conforme necessário */
