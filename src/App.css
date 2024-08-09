@@ -1,5 +1,6 @@
 :root {
   --product-box-bg-color: #fff; /* Cor de fundo padrão para o product-box */
+  --description-color: #b51f1f; 
 }
 
 .App {
@@ -146,7 +147,7 @@ button:hover {
   width: auto;
   height: auto;
   overflow-wrap: break-word; /* Propriedade mais moderna e recomendada */
-  color: rgb(0, 0, 0);
+  color: var(--description-color); /* Usa a variável CSS para a cor de fundo */
 }
 
 .h6 {

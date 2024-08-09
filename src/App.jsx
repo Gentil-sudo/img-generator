@@ -10,7 +10,8 @@ function App() {
   const [radio, setRadio] = useState(""); // Valor do rádio será armazenado aqui
   const [uploadedImage, setUploadedImage] = useState(null);
   const [uploadLogo, setUploadLogo] = useState(null);
-  const [backgroundColor, setBackgroundColor] = useState("#ffffff"); // Cor de fundo
+  const [backgroundColor, setBackgroundColor] = useState("#ffffff"); // Cor de fundo 
+  const [textColor, setTextColor] = useState("#ffffff");
 
   const navigate = useNavigate();
 
@@ -48,6 +49,11 @@ function App() {
   const handleColorChange = (event) => {
     const color = event.target.value;
     setBackgroundColor(color);
+  };
+
+  const handleColorChangeText = (event) => {
+    const textColor = event.target.value;
+    setTextColor(textColor);
   };
 
   // Use useEffect to apply the background color to the .product-box element
@@ -123,6 +129,13 @@ function App() {
                 type="color"
                 value={backgroundColor}
                 onChange={handleColorChange}
+              />
+               <label htmlFor="">Escolha a Cor do Texto</label>
+              <input
+                placeholder="Cor do Texto"
+                type="color"
+                value={textColor}
+                onChange={handleColorChangeText}
               />
               <button onClick={handleGenerateImage}>Gerar Imagem</button>
             </div>
